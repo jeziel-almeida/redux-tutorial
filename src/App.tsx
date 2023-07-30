@@ -1,22 +1,23 @@
 import './App.css'
-import { useDispatch, useSelector } from 'react-redux'
-import { typeState } from './redux-deprecated-createState'
+import { useDispatch } from 'react-redux'
+import { increment, incrementAmout } from './features/counter/counter-slice';
+import { useAppSelector } from './hooks';
 
 function App() {
 
-  const count = useSelector<typeState, number>(state => state.counter.value);
+  const count = useAppSelector(state => state.counter.value);
   const dispatch = useDispatch();
 
   const handleOnClick = () => {
-    dispatch({type: 'counter/increment'})
+    dispatch(increment());
   }
 
   const handleOnClickAmount = () => {
-    dispatch({type: 'counter/incrementAmout', payload: 50})
+    dispatch(incrementAmout(25));
   }
 
   const handleOnClickAmount2 = () => {
-    dispatch({type: 'counter/incrementAmout', payload: 100})
+    dispatch(incrementAmout(50));
   }
 
   return (
@@ -32,8 +33,7 @@ function App() {
         <button onClick={handleOnClickAmount2}>
           count is {count}
         </button>
-      </div>
-      
+      </div>      
     </>
   )
 }

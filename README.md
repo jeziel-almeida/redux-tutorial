@@ -1,6 +1,6 @@
-# Redux Example - with deprecated createStore() 
+# Redux Example - with Redux Toolkit 
 
-> npm install redux react-redux
+> npm install @reduxjs/toolkit
 
 > Modify main.tsx:
 
