@@ -1,5 +1,9 @@
 # Redux Example - with deprecated createStore() 
 
+![redux-gif](./redux-example.gif)
+
+### Usage
+
 > npm install redux react-redux
 
 > Modify main.tsx:
